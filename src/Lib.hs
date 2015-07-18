@@ -15,7 +15,7 @@ data PackageInfo
     = PackageInfo
       { p_name         :: String               -- ^ The name of the package
       , p_version      :: String               -- ^ The latest package version
-      , p_dependencies :: String               -- ^ The list of required packages
+      , p_dependencies :: [String]             -- ^ The list of required packages
       , p_author       :: String               -- ^ The author
       , p_maintainer   :: String               -- ^ The maintainer
       , p_category     :: String               -- ^ The package category
@@ -33,7 +33,7 @@ parseCabal cbl =
     ParseOk _ d   -> let pinfo = PackageInfo
                                  { p_name         = extractPackageName d
                                  , p_version      = intercalate "." $ map show (extractPackageVersion d)
-                                 , p_dependencies = intercalate "," (extractDeps d)
+                                 , p_dependencies = extractDeps d
                                  , p_author       = extractAuthor d
                                  , p_maintainer   = extractMaintainer d
                                  , p_category     = extractCategory d
@@ -69,7 +69,7 @@ extractDeps d =  map getPackageName (ldeps ++ edeps)
   where ldeps = case (condLibrary d) of
                   Nothing -> []
                   Just c  -> condTreeConstraints c
-        edeps = concat $ map (condTreeConstraints . snd) $ condExecutables d
+        edeps = concatMap (condTreeConstraints . snd) $ condExecutables d
 
 main :: IO ()
 main = do cbl <- getContents

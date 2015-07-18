@@ -1,0 +1,18 @@
+name:                webcrank-dispatch-examples
+version:             0.1.0.0
+license:             BSD3
+license-file:        LICENSE
+author:              Richard Wallace
+maintainer:          rwallace@thewallacepack.net
+category:            Web
+build-type:          Simple
+cabal-version:       >=1.10
+
+executable examples
+  build-depends:       base >=4.7
+                     , mtl
+                     , reroute
+                     , text
+                     , webcrank-dispatch
+  default-language:    Haskell98
+  main-is:             Main.hs

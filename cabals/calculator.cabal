@@ -1,0 +1,22 @@
+Name:               calculator
+Version:            1.0
+Synopsis:           A simple calculator demoing the usage of Java/Swing from within Haskell
+Description:        A simple calculator demoing the usage of Java/Swing from within Haskell
+
+Category:           LaTeX
+Stability:          provisional
+License:            MIT
+License-File:       LICENSE
+Author:             Julian Fleischer <julian.fleischer@fu-berlin.de>
+Maintainer:         Julian Fleischer <julian.fleischer@fu-berlin.de>
+Build-Type:         Simple
+Cabal-Version:      >= 1.8
+
+Executable calculator
+    Hs-Source-Dirs:     src
+    Main-is:            calculator.hs
+
+    Build-Depends:      base >= 4.5 && < 5.0
+                        , java-bridge >= 0.20130507
+
+    Ghc-Options:        -threaded

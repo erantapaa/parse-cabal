@@ -1,0 +1,10 @@
+build-type:    Simple
+cabal-version: >= 1.2
+
+name:          yavie-x11
+version:       0.0.1
+
+executable yavie-x11
+  main-is:       yavie-x11.hs
+  build-depends: base > 4, convertible, time, setlocale, yjtools, x11-xim,
+                 X11, X11-xft, yavie
