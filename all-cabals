@@ -1,7 +1,6 @@
 cabals/3d-graphics-examples.cabal
 cabals/3dmodels.cabal
 cabals/4Blocks.cabal
-cabals/<<<projName>>>.cabal
 cabals/a50.cabal
 cabals/abacate.cabal
 cabals/abc-puzzle.cabal
@@ -57,7 +56,6 @@ cabals/acme-colosson.cabal
 cabals/acme-comonad.cabal
 cabals/acme-cutegirl.cabal
 cabals/acme-dont.cabal
-cabals/acme-everything.cabal
 cabals/acme-flipping-tables.cabal
 cabals/acme-hq9plus.cabal
 cabals/acme-http.cabal
@@ -4031,7 +4029,6 @@ cabals/implicit-params.cabal
 cabals/implicit.cabal
 cabals/imports.cabal
 cabals/improve.cabal
-cabals/in.cabal
 cabals/INblobs.cabal
 cabals/inc-ref.cabal
 cabals/inch.cabal
@@ -5497,7 +5494,6 @@ cabals/overture.cabal
 cabals/pack.cabal
 cabals/package-o-tron.cabal
 cabals/package-vt.cabal
-cabals/package.cabal
 cabals/packdeps.cabal
 cabals/packed-dawg.cabal
 cabals/packedstring.cabal
@@ -5927,7 +5923,6 @@ cabals/progression.cabal
 cabals/progressive.cabal
 cabals/proj4-hs-bindings.cabal
 cabals/project-template.cabal
-cabals/project.cabal
 cabals/projection.cabal
 cabals/prolog-graph-lib.cabal
 cabals/prolog-graph.cabal
