@@ -15,17 +15,16 @@ cabal-version:       >=1.10
 
 library
   hs-source-dirs:      src
-  exposed-modules:     Lib, PackageRank, TestRank, TestTar
+  exposed-modules:     Lib, PackageRank, TestRank, TestTar, TarUtil
   build-depends:       base >= 4.7 && < 5, Cabal, pretty-show, containers, deepseq, tar, bytestring,
-                       zlib, bzlib
+                       zlib, bzlib, pipes, pipes-parse
   default-language:    Haskell2010
 
 executable parse-cabal
   hs-source-dirs:      app
   main-is:             Main.hs
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
-  build-depends:       base
-                     , parse-cabal, containers, strict
+  build-depends:       base, parse-cabal, containers, strict, pipes, pretty-show, bytestring
   default-language:    Haskell2010
 
 test-suite parse-cabal-test
