@@ -14,7 +14,7 @@ import Pipes
 import qualified Pipes.Prelude as P
 
 import Text.Show.Pretty
-import qualified Data.ByteString.Lazy.Char8 as LBS
+import qualified Data.ByteString.Lazy.UTF8 as LBS
 
 safeHead a [] = a
 safeHead _ (a:_) = a
@@ -24,7 +24,7 @@ computeRanks indexTarPath = do
   cabals <- P.toListM $ T.pipesTarEntries entries >-> T.pipesSelectCabals >-> T.pipesLatestVersions
   -- create a map of PackageInfo records
   -- create the map of rankings
-  let pe_to_info = L.parseCabal . LBS.unpack . T.pe_content
+  let pe_to_info = L.parseCabal . LBS.toString . T.pe_content
       pkgInfoMap = Map.fromList [ (T.pe_package pe, pinfo) | pe <- cabals, Just pinfo <- [ pe_to_info pe ] ]
       nodes = [ (pkg, L.p_dependencies pinfo) | (pkg, pinfo) <- Map.assocs pkgInfoMap ]
       rankingMap = PR.rankingStd nodes
